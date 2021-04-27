@@ -1,61 +1,53 @@
 <html>
-<body style=" background-image: url(adminlogin.jpeg);
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;">
 
-<form action="insert_into_train_2.php" method="post">
+<body style="">
 
-Train Name: <input type="text" name="tname" required><br>
+    <form action="insert_into_train_2.php" method="post">
 
-Starting Point: <select id="sp" name="sp" required>
-<?php
+        Train Name: <input type="text" name="tname" required><br>
 
-require "db.php";
+        Starting Point: <select id="sp" name="sp" required>
+            <?php
 
-$cdquery="SELECT sname FROM station";
-$cdresult=mysqli_query($conn,$cdquery);
-        
-echo " <option value = \"\" > </option>";
+            require "db.php";
 
-while ($cdrow=mysqli_fetch_array($cdresult)) 
-{
- $cdTitle=$cdrow['sname'];
- echo " <option value = \"$cdTitle\" > $cdTitle </option>";
-            
-}
-?>
-</select><br>
+            $cdquery = "SELECT sname FROM station";
+            $cdresult = mysqli_query($conn, $cdquery);
 
-Starting Time: <input type="time" name="st" required><br>
+            echo " <option value = \"\" > </option>";
 
-Destination Point: <select id="dp" name="dp" required>
-<?php
+            while ($cdrow = mysqli_fetch_array($cdresult)) {
+                $cdTitle = $cdrow['sname'];
+                echo " <option value = \"$cdTitle\" > $cdTitle </option>";
+            }
+            ?>
+        </select><br>
 
-require "db.php";
+        Starting Time: <input type="time" name="st" required><br>
 
-$cdquery="SELECT sname FROM station";
-$cdresult=mysqli_query($conn,$cdquery);
-        
-echo " <option value = \"\" ></option>";
+        Destination Point: <select id="dp" name="dp" required>
+            <?php
 
-while ($cdrow=mysqli_fetch_array($cdresult)) 
-{
- $cdTitle=$cdrow['sname'];
- echo " <option value = \"$cdTitle\" > $cdTitle </option>";
-            
-}
-?>
-</select><br>
+            require "db.php";
 
-Destination Time: <input type="time" name="dt" required><br>
+            $cdquery = "SELECT sname FROM station";
+            $cdresult = mysqli_query($conn, $cdquery);
 
-Day of Arrival: <input type="text" name="dd" required><br>
+            echo " <option value = \"\" ></option>";
 
-<input type="submit">
+            while ($cdrow = mysqli_fetch_array($cdresult)) {
+                $cdTitle = $cdrow['sname'];
+                echo " <option value = \"$cdTitle\" > $cdTitle </option>";
+            }
+            ?>
+        </select><br>
+
+        Destination Time: <input type="time" name="dt" required><br>
+
+        Day of Arrival: <input type="text" name="dd" required><br>
+
+        <input type="submit">
 
 </body>
+
 </html>
-
-

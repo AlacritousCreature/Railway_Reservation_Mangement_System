@@ -1,39 +1,34 @@
 <html>
-<body style=" background-image: url(adminlogin.jpeg);
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;">
 
-<form action="insert_into_classseats_2.php" method="post">
+<body style="">
 
-Trains: <select id="tno" name="tno" required>
-<?php
+    <form action="insert_into_classseats_2.php" method="post">
 
-require "db.php";
+        Trains: <select id="tno" name="tno" required>
+            <?php
 
-$query="SELECT * FROM train";
-$result=mysqli_query($conn,$query);
+            require "db.php";
 
-echo " <option value = \"\" > </option>";
+            $query = "SELECT * FROM train";
+            $result = mysqli_query($conn, $query);
 
-while ($row=mysqli_fetch_array($result)) 
-{
- $tno=$row['trainno'];
- $tn=$row['tname']." starting at ".$row['sp'];
- echo " <option value = \"$tno\" > $tn </option> ";
-}
-?>
-</select><br>
+            echo " <option value = \"\" > </option>";
 
-Date Of Journey: <input type="date" name="doj" required><br>
-Class Name: <input type="text" name="class" required><br>
-Fare per Seat: <input type="text" name="fps" required><br>
-Total Seats: <input type="text" name="seatsleft" required><br>
+            while ($row = mysqli_fetch_array($result)) {
+                $tno = $row['trainno'];
+                $tn = $row['tname'] . " starting at " . $row['sp'];
+                echo " <option value = \"$tno\" > $tn </option> ";
+            }
+            ?>
+        </select><br>
 
-<br><br><input type="submit" value="Add Train Schedule">
+        Date Of Journey: <input type="date" name="doj" required><br>
+        Class Name: <input type="text" name="class" required><br>
+        Fare per Seat: <input type="text" name="fps" required><br>
+        Total Seats: <input type="text" name="seatsleft" required><br>
+
+        <br><br><input type="submit" value="Add Train Schedule">
 
 </body>
+
 </html>
-
-

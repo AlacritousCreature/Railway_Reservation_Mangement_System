@@ -1,10 +1,6 @@
 <html>
 
-<body style=" background-image: url(adminlogin.jpeg);
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;">
+<body style="">
     <div align="center">
         <?php
 
