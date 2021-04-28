@@ -24,26 +24,27 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <?php
+    <div style="padding-top:10rem;" class="container">
+        <?php
 
-    require "db.php";
+        require "db.php";
 
-    $pwd = $_POST["password"];
-    $eid = $_POST["emailid"];
-    $mno = $_POST["mobileno"];
-    $dob = $_POST["dob"];
+        $pwd = $_POST["password"];
+        $eid = $_POST["emailid"];
+        $mno = $_POST["mobileno"];
+        $dob = $_POST["dob"];
 
-    $sql = "INSERT INTO user (password,emailid,mobileno,dob) VALUES ('" . $pwd . "','" . $eid . "','" . $mno . "','" . $dob . "')";
-    // echo $sql;
+        $sql = "INSERT INTO user (password,emailid,mobileno,dob) VALUES ('" . $pwd . "','" . $eid . "','" . $mno . "','" . $dob . "')";
+        // echo $sql;
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Hi $eid, <a href=\"index.htm\"> Click here </a> to browse through our website!!! ";
-    } else {
-        echo "Error:" . $conn->error . "<br> <a href=\"new_user_form.html\">Go Back to Login!!!</a> ";
-    }
+        if ($conn->query($sql) === TRUE) {
+            echo "<h4> Hi $eid, <a href=\"index.htm\"> Click here </a> to browse through our website!!! </h4>";
+        } else {
+            echo "<h4> Error:" . $conn->error . "<br> <a href=\"new_user_form.html\">Go Back to Login!!!</a> </h4>";
+        }
 
-    $conn->close();
-    ?>
+        $conn->close();
+        ?></div>
     <div id="footid"></div>
 </body>
 

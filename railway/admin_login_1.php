@@ -24,19 +24,21 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
+    <div class="container" style="padding-top:10rem;">
+        <div align="center">
+            <?php
+
+            echo " <br><a href=\"insert_into_stations.php\"> Show All Station </a><br> ";
+            echo " <br><a href=\"insert_into_train_1.php\"> Enter New Train </a><br> ";
+            echo " <br><a href=\"insert_into_classseats_1.php\"> Enter Train Schedule </a><br> ";
+            echo " <br><a href=\"booked.php\"> View all booked tickets </a><br> ";
+            echo " <br><a href=\"cancelled.php\"> View all cancelled tickets </a><br> ";
+
+            ?>
+            <br><a href="index.htm">Go to Home Page!!! </a> You'll be Logged Out!!!
 
 
-    <div align="center">
-        <?php
-
-        echo " <br><a href=\"insert_into_stations.php\"> Show All Station </a><br> ";
-        echo " <br><a href=\"insert_into_train_1.php\"> Enter New Train </a><br> ";
-        echo " <br><a href=\"insert_into_classseats_1.php\"> Enter Train Schedule </a><br> ";
-        echo " <br><a href=\"booked.php\"> View all booked tickets </a><br> ";
-        echo " <br><a href=\"cancelled.php\"> View all cancelled tickets </a><br> ";
-
-        ?>
-        <br><a href="index.htm">Go to Home Page!!! </a> You'll be Logged Out!!!
+        </div>
     </div>
     <div id="footid"></div>
 </body>

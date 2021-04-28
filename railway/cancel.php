@@ -24,28 +24,30 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <?php
+    <div class="container" style="padding-top:10rem;">
+        <?php
 
-    session_start();
+        session_start();
 
-    require "db.php";
+        require "db.php";
 
-    $pnr = $_POST["cancpnr"];
-    $uid = $_SESSION["id"];
-    //echo "$uid";
+        $pnr = $_POST["cancpnr"];
+        $uid = $_SESSION["id"];
+        //echo "$uid";
 
-    $sql = " UPDATE resv SET status ='CANCELLED' WHERE resv.pnr='" . $pnr . "' AND resv.id='" . $uid . "' ";
+        $sql = " UPDATE resv SET status ='CANCELLED' WHERE resv.pnr='" . $pnr . "' AND resv.id='" . $uid . "' ";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Cancellation Successful!!!";
-    } else {
-        echo "<br><br>Error:" . $conn->error;
-    }
+        if ($conn->query($sql) === TRUE) {
+            echo "<h4>Cancellation Successful!!!</h4>";
+        } else {
+            echo "<br><br>Error:" . $conn->error;
+        }
 
-    echo " <br><br><a href=\"index.htm\">Home Page</a><br>";
+        echo " <br><br><a href=\"index.htm\">Home Page</a><br>";
 
-    $conn->close();
-    ?>
+        $conn->close();
+        ?>
+    </div>
     <div id="footid"></div>
 </body>
 

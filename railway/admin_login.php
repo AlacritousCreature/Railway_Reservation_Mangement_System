@@ -24,36 +24,40 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <div align="center">
-        <?php
-        session_start();
-        if ($_POST["uid"] == 'admin' and $_POST["password"] == 'admin') {
-            $_SESSION["admin_login"] = True;
-        }
+    <div class="container" style="padding-top:5rem;">
+        <div align="center">
 
-        if ($_SESSION["admin_login"] == True) {
-            echo " <br><a href=\"insert_into_stations.php\"> Show All Stations </a><br> ";
-            echo " <br><a href=\"show_trains.php\"> Show All Trains </a><br> ";
-            echo " <br><a href=\"show_users.php\"> Show All Users </a><br> ";
-            echo " <br><a href=\"insert_into_train_3.php\"> Enter New Train </a><br> ";
-            echo " <br><a href=\"insert_into_classseats_3.php\"> Enter Train Schedule </a><br> ";
-            echo " <br><a href=\"booked.php\"> View all booked tickets </a><br> ";
-            echo " <br><a href=\"cancelled.php\"> View all cancelled tickets </a><br> ";
-            //echo " <br><a href=\"http://localhost/railway/logout.php\"> Logout </a><br> ";
-        } else {
+            <?php
+            session_start();
+            if ($_POST["uid"] == 'admin' and $_POST["password"] == 'admin') {
+                $_SESSION["admin_login"] = True;
+            }
 
-            echo "
+            if ($_SESSION["admin_login"] == True) {
+                echo "
+                 <br>
+                <a href=\"insert_into_stations.php\">Show All Stations</a><br>
+                <br><a href=\"show_trains.php\"> Show All Trains </a><br>
+                <br><a href=\"show_users.php\"> Show All Users </a><br>
+                <br><a href=\"insert_into_train_3.php\"> Enter New Train </a><br>
+                <br><a href=\"insert_into_classseats_3.php\"> Enter Train Schedule </a><br>
+                <br><a href=\"booked.php\"> View all booked tickets </a><br>
+                <br><a href=\"cancelled.php\"> View all cancelled tickets </a><br> ";
+            } else {
+
+                echo "
 <form action=\"admin_login.php\" method=\"post\">
 User ID: <input type=\"text\" name=\"uid\" required><br>
 Password: <input type=\"password\" name=\"password\" required><br>
 <input type=\"submit\">
 </form>
 ";
-        }
+            }
 
 
-        ?>
-        <br><a href="index.htm">Go to Home Page!!!</a>
+            ?>
+            <br><a href="index.htm">Go to Home Page!!!</a>
+        </div>
     </div>
     <div id="footid"></div>
 </body>

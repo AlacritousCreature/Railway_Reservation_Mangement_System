@@ -24,62 +24,64 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
+    <div class="container" style="padding-top:10rem;">
+        <form action="new_png.php" method="post">
+            <h4>Fill all passengers details.</h4>
+            <?php
 
-    <form action="new_png.php" method="post">
+            session_start();
 
-        <?php
+            require "db.php";
 
-        session_start();
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-        require "db.php";
+            $mobile = $_POST["mno"];
+            $pwd = $_POST["password"];
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+            $query = mysqli_query($conn, "SELECT * FROM user WHERE user.mobileno=$mobile AND user.password='" . $pwd . "' ") or die(mysql_error());
+            if (mysqli_num_rows($query) == 0) {
+                echo "No such login !!! <br> ";
+                echo " <br><a href=\"enquiry_result.php\">Go Back!!!</a> <br>";
+                die();
+            }
 
-        $mobile = $_POST["mno"];
-        $pwd = $_POST["password"];
+            $row = mysqli_fetch_array($query);
+            $temp = $row['id'];
+            //echo $temp;
+            //echo $_SESSION["doj"];
+            $_SESSION["id"] = "$temp";
+            $tno = $_POST["tno"];
+            $_SESSION["tno"] = "$tno";
+            $class = $_POST["class"];
+            $_SESSION["class"] = "$class";
+            $nos = $_POST["nos"];
+            $_SESSION["nos"] = "$nos";
 
-        $query = mysqli_query($conn, "SELECT * FROM user WHERE user.mobileno=$mobile AND user.password='" . $pwd . "' ") or die(mysql_error());
-        if (mysqli_num_rows($query) == 0) {
-            echo "No such login !!! <br> ";
-            echo " <br><a href=\"enquiry_result.php\">Go Back!!!</a> <br>";
-            die();
-        }
+            echo "<table>";
+            echo "<thead><td>Passenger Name</td><td>Age</td><td>Gender(F/M)</td></thead>";
+            for ($i = 1; $i <= $nos; $i++) {
 
-        $row = mysqli_fetch_array($query);
-        $temp = $row['id'];
-        //echo $temp;
-        //echo $_SESSION["doj"];
-        $_SESSION["id"] = "$temp";
-        $tno = $_POST["tno"];
-        $_SESSION["tno"] = "$tno";
-        $class = $_POST["class"];
-        $_SESSION["class"] = "$class";
-        $nos = $_POST["nos"];
-        $_SESSION["nos"] = "$nos";
+                echo "<td><input type='text' name='pname[]' placeholder=\"Passenger Name $i\" required></td><br> ";
+                echo "<td><input type='text' name='page[]' placeholder=\"Passenger Age $i\" required></td><br>";
+                echo "<td><input type='text' name='pgender[]' placeholder=\"Passenger Gender $i\" required></td></tr><br> ";
+            }
 
-        echo "<table>";
+            echo "</table>";
 
-        for ($i = 0; $i < $nos; $i++) {
-            echo "<tr><td><input type='text' name='pname[]' placeholder=\"Passenger Name\" required></td><br> ";
-            echo "<td><input type='text' name='page[]' placeholder=\"Passenger Age\" required></td><br>";
-            echo "<td><input type='text' name='pgender[]' placeholder=\"Passenger Gender\" required></td></tr><br> ";
-        }
+            //Enter Train No: <input type="text" name="tno" required><br>
+            //Enter Class: <input type="text" name="class" required><br>
 
-        echo "</table>";
+            echo "<a href=\"enquiry.php\">Back to Enquiry</a>";
 
-        //Enter Train No: <input type="text" name="tno" required><br>
-        //Enter Class: <input type="text" name="class" required><br>
+            $conn->close();
 
-        echo "<a href=\"enquiry.php\">Back to Enquiry</a>";
+            ?>
 
-        $conn->close();
-
-        ?>
-
-        <br><br><input type="submit" value="Book">
-        <div id="footid"></div>
+            <br><br><input type="submit" value="Book" type="button" class="btn btn-success">
+    </div>
+    <div id="footid"></div>
 </body>
 
 </html>
