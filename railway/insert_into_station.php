@@ -41,6 +41,7 @@
 
     $conn->close();
     ?>
+    
     <div id="footid"></div>
 </body>
 

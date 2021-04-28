@@ -24,9 +24,12 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <div class="container" style="padding-top:5rem;">
-        <div align="center">
-
+    <div class="container" style="padding-top:10rem;">
+        <div class="row" style="display: flex;">
+        <div class="column" style="flex: 50%;padding: 5px;">
+            <img src="public/assets/undraw_Traveling_re_weve.svg" alt="Snow" style="width:100%">
+        </div>
+        <div class="column" style="flex: 50%; padding: 5px;">
             <?php
             session_start();
             if ($_POST["uid"] == 'admin' and $_POST["password"] == 'admin') {
@@ -36,30 +39,125 @@
             if ($_SESSION["admin_login"] == True) {
                 echo "
                  <br>
-                <a href=\"insert_into_stations.php\">Show All Stations</a><br>
-                <br><a href=\"show_trains.php\"> Show All Trains </a><br>
-                <br><a href=\"show_users.php\"> Show All Users </a><br>
-                <br><a href=\"insert_into_train_3.php\"> Enter New Train </a><br>
-                <br><a href=\"insert_into_classseats_3.php\"> Enter Train Schedule </a><br>
-                <br><a href=\"booked.php\"> View all booked tickets </a><br>
-                <br><a href=\"cancelled.php\"> View all cancelled tickets </a><br> ";
+                <div class=\"row\" style=\"display: flex;\">
+                <div class=\"column\" flex: 50% \">
+                <a href=\"insert_into_stations.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \">Show All Stations</a><br>
+                <br><a href=\"show_trains.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \">Show All Trains </a><br>
+                <br><a href=\"show_users.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \"> Show All Users </a><br>
+                </div>
+                <div class=\"column\" flex: 50% \">
+                <br><a href=\"insert_into_train_3.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \"> Enter New Train </a><br>
+                <br><a href=\"insert_into_classseats_3.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \"> Enter Train Schedule </a><br>
+                <br><a href=\"booked.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \"> View all booked tickets </a><br>
+                <br><a href=\"cancelled.php\" style=\"text-decoration: none; 
+                display: inline-block;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: rgb(2, 1, 58);
+                border-radius: 50px;
+                outline: whitesmoke;
+                
+                \"> View all cancelled tickets </a><br> </div></div>";
             } else {
 
                 echo "
-<form action=\"admin_login.php\" method=\"post\">
-User ID: <input type=\"text\" name=\"uid\" required><br>
-Password: <input type=\"password\" name=\"password\" required><br>
-<input type=\"submit\">
-</form>
-";
+                        <form action=\"admin_login.php\" method=\"post\">
+                        User ID: <input type=\"text\" name=\"uid\" required><br><br>
+                        Password: <input type=\"password\" name=\"password\" required><br><br>
+                        <input type=\"submit\" type=\"button\" class=\"btn btn-success\">
+                      
+                        </form>
+                        ";
             }
+            
 
 
             ?>
-            <br><a href="index.htm">Go to Home Page!!!</a>
+            <br>
+            <br>
+            </div>
+           
+            <div class="row" style="display: flex;">
+            <div class="column" style="flex: 40%;padding: 5px;"></div>
+            <div class="column" style="flex: 20%;padding: 5px;">
+            <a href="index.htm"  style="text-decoration: none; 
+                        display: inline-block;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        color: #ffffff;
+                        background-color: rgb(0, 102, 0);
+                        border-radius: 50px;
+                        outline: whitesmoke;
+                        
+                        ">Go to Home Page!!!</a></div>
+            <div class="column" style="flex: 40%;padding: 5px;"></div>
+            </div>
+            <!-- <br><div align="center"><a href="index.htm">Go to Home Page!!!</a></div> -->
         </div>
     </div>
     <div id="footid"></div>
 </body>
-
 </html>
