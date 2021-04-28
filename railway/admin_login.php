@@ -135,7 +135,10 @@
 
 
             ?>
+            <br>
+            <br>
             </div>
+           
             <div class="row" style="display: flex;">
             <div class="column" style="flex: 40%;padding: 5px;"></div>
             <div class="column" style="flex: 20%;padding: 5px;">
