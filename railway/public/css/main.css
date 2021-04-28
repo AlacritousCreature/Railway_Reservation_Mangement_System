@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Andika New Basic", sans-serif;
+}
+
+h1 {
+    color: #58afed;
+}
+
+
+/* ===========footer=========== */
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-height: 800px) {
+    footer {
+        position: static;
+    }
+    header {
+        padding-top: 40px;
+    }
+}
+
+.footer-distributed {
+    background-color: #242729;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font: normal 2.1rem "New Tegomin", serif;
+    margin: 0;
+}
+
+
+/* The company logo */
+
+.footer-distributed .footer-left img {
+    width: 30%;
+}
+
+.footer-distributed h3 span {
+    color: #aacce4;
+    font-size: 1.2rem;
+}
+
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #aacce4;
+    text-decoration: none;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+/* Here is the code for Responsive Footer */
+
+
+/* You can remove below code if you don't want Footer to be responsive */
+
+@media (max-width: 880px) {
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+}
+
+.footlogo {
+    width: 100px;
+    height: 125px;
+}
+
+
+/* ===========footer=========== */
+
+
+/* ===========header=========== */
+
+#mainNavbar {
+    padding: 0rem 4rem;
+    box-shadow: 0rem 0rem 0.8rem 0.3rem #4b4848;
+    font-weight: 500px;
+    height: fit-content;
+    background-color: #000000;
+    /*#bbffdf*/
+    transition: 0.2s;
+}
+
+#mainNavbar .navbar-brand {
+    color: white;
+    font-family: 'New Tegomin', serif;
+    font-size: 2.5rem;
+    margin: 3px 10px 5px 1px;
+    padding: 2px 3px 3px 1px;
+}
+
+#mainNavbar .nav-link {
+    font-family: "nunito", sans-serif;
+    color: #a7a7a7;
+    font-size: 1rem;
+    margin: 0rem 0rem 0rem 2rem;
+    padding: 8px 5px;
+}
+
+#mainNavbar #signin {
+    padding-left: 2.2rem;
+    border-left: 0.1rem solid #8b8d8f;
+}
+
+#mainNavbar .nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+#headingGrp span {
+    color: black;
+}
+
+#headingGrp h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.brand-name {
+    font-size: 30px;
+    font-weight: 100px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .2s;
+    /* text-transform: lowercase; */
+}
+
+nav.stroke ul li a {
+    position: relative;
+}
+
+nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: rgb(255, 255, 255);
+    height: 0.07rem;
+}
+
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+.navlogo {
+    width: 3rem;
+    height: 4rem;
+}
+
+
+/* Here is the code for Responsive header */
+
+@media (max-width: 1300px) {
+    #mainNavbar {
+        padding: 0rem 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    #mainNavbar .nav-link {
+        font-size: 1rem;
+        margin: 0rem 0rem 0rem 2.1rem;
+        padding: 0px 0px;
+    }
+}
+
+@media (max-width: 1100px) {
+    #mainNavbar .nav-link {
+        font-size: 0.99rem;
+        margin: 0rem 0rem 0rem 1.7rem;
+        padding: 0px 0px;
+    }
+    #mainNavbar .navbar-brand {
+        font-size: 2rem;
+    }
+    #mainNavbar #signin {
+        padding-left: 1.6rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    #mainNavbar {
+        padding: 0rem 1.8rem;
+    }
+    #mainNavbar .nav-link {
+        font-size: 0.9rem;
+        margin: 0rem 0rem 0rem 1.3rem;
+        padding: 0px 0px;
+    }
+    #mainNavbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+    #mainNavbar #signin {
+        padding-left: 1rem;
+    }
+    .navlogo {
+        width: 2.5rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 880px) {
+    #mainNavbar {
+        padding: 0rem 1rem;
+    }
+    #mainNavbar .nav-link {
+        font-size: 0.82rem;
+        margin: 0.5rem 0rem 0.5rem 1.3rem;
+        padding: 0px 0px;
+    }
+    #mainNavbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+    #mainNavbar #signin {
+        padding-left: 1rem;
+    }
+    .navlogo {
+        width: 2.5rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    nav.stroke ul li a:after {
+        height: 0rem;
+    }
+    #mainNavbar .nav-link {
+        font-size: 0.9rem;
+    }
+    #mainNavbar #signin {
+        border-left: none;
+        padding: 0rem 1rem;
+        margin-left: 0.2rem;
+    }
+    #mainNavbar #signin:hover {
+        border-left: 0.1rem solid rgb(255, 255, 255);
+    }
+    #mainNavbar .nav-link {
+        padding: 0rem 1rem;
+        margin-left: 0.2rem;
+    }
+    #mainNavbar .nav-link:hover {
+        border-left: 0.1rem solid rgb(255, 255, 255);
+    }
+}
+
+
+/* ===========header ends here=========== */
