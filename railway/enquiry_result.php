@@ -70,7 +70,26 @@
         $conn->close();
         ?>
 
-        <br><a href="index.htm">Go to Home Page!!!</a>
+        <br>
+
+        <div class="row" style="display: flex; padding: 20px">
+            <div class="column" style="flex: -10%;padding: 5px;"></div>
+            <div align="left" class="column" style="flex: 50%;padding: 5px;">
+            <a href="index.htm"  style="text-decoration: none; 
+                        display: inline-block;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        color: #ffffff;
+                        background-color: rgb(2, 1, 58);
+                        border-radius: 50px;
+                        outline: whitesmoke;
+                        
+                        ">Go to Home Page!!!</a></div>
+            </div>
+            </div>
+
+            
     </div>
     <div id="footid"></div>
 
