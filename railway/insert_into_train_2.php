@@ -24,22 +24,24 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <?php
+    <div class="container" style="padding-top:10rem;">
+        <?php
 
-    require "db.php";
+        require "db.php";
 
-    $sql = "INSERT INTO train (tname,sp,st,dp,dt,dd) VALUES ('" . $_POST["tname"] . "','" . $_POST["sp"] . "','" . $_POST["st"] . "','" . $_POST["dp"] . "','" . $_POST["dt"] . "','" . $_POST["dd"] . "')";
+        $sql = "INSERT INTO train (tname,sp,st,dp,dt,dd) VALUES ('" . $_POST["tname"] . "','" . $_POST["sp"] . "','" . $_POST["st"] . "','" . $_POST["dp"] . "','" . $_POST["dt"] . "','" . $_POST["dd"] . "')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-    echo "<br> <a href=\"admin_login_1.php\">Go Back to Admin Menu!!!</a> ";
+        echo "<br> <a href=\"admin_login_1.php\">Go Back to Admin Menu!!!</a> ";
 
-    $conn->close();
-    ?>
+        $conn->close();
+        ?>
+    </div>
     <div id="footid"></div>
 </body>
 

@@ -24,32 +24,34 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
 	<div id="navid"></div>
-	<?php
+	<div class="container" style="padding-top:10rem;">
+		<?php
 
-	require "db.php";
+		require "db.php";
 
-	if ($_POST["station"] == "") {
-		echo "
+		if ($_POST["station"] == "") {
+			echo "
 <form action=\"edit_station.php?id=" . $_GET["id"] . "\" method=\"post\">
 Edit Station : <br><br>
 <input type=\"text\" name=\"station\" required>
 <input type=\"submit\">
 </form>
 ";
-	} else {
-		$sql = "UPDATE `station` SET `sname`='" . $_POST["station"] . "' where id= ('" . $_GET["id"] . "')";
-
-		if ($conn->query($sql) === TRUE) {
-			echo "Station updated successfully";
 		} else {
-			echo "Error:" . $conn->error;
+			$sql = "UPDATE `station` SET `sname`='" . $_POST["station"] . "' where id= ('" . $_GET["id"] . "')";
+
+			if ($conn->query($sql) === TRUE) {
+				echo "Station updated successfully";
+			} else {
+				echo "Error:" . $conn->error;
+			}
 		}
-	}
 
-	echo "<br> <a href=\"admin_login_1.php\">Go Back to Admin Menu!!!</a> ";
+		echo "<br> <a href=\"admin_login_1.php\">Go Back to Admin Menu!!!</a> ";
 
-	$conn->close();
-	?>
+		$conn->close();
+		?>
+	</div>
 	<div id="footid"></div>
 </body>
 

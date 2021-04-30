@@ -24,24 +24,24 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
+    <div class="container" style="padding-top:10rem;">
+        <?php
 
-    <?php
+        require "db.php";
 
-    require "db.php";
+        $sql = "INSERT INTO station(sname) VALUES ('" . $_POST["sname"] . "')";
 
-    $sql = "INSERT INTO station(sname) VALUES ('" . $_POST["sname"] . "')";
+        if ($conn->query($sql) === TRUE) {
+            echo " '" . $_POST["sname"] . "':New record created successfully";
+        } else {
+            echo "Error:" . $conn->error;
+        }
 
-    if ($conn->query($sql) === TRUE) {
-        echo " '" . $_POST["sname"] . "':New record created successfully";
-    } else {
-        echo "Error:" . $conn->error;
-    }
+        echo "<br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
 
-    echo "<br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
-
-    $conn->close();
-    ?>
-    
+        $conn->close();
+        ?>
+    </div>
     <div id="footid"></div>
 </body>
 

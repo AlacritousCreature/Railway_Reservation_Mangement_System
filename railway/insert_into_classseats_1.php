@@ -24,33 +24,35 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <form action="insert_into_classseats_2.php" method="post">
+    <div class="container" style="padding-top:10rem;">
+        <form action="insert_into_classseats_2.php" method="post">
 
-        Trains: <select id="tno" name="tno" required>
-            <?php
+            Trains: <select id="tno" name="tno" required>
+                <?php
 
-            require "db.php";
+                require "db.php";
 
-            $query = "SELECT * FROM train";
-            $result = mysqli_query($conn, $query);
+                $query = "SELECT * FROM train";
+                $result = mysqli_query($conn, $query);
 
-            echo " <option value = \"\" > </option>";
+                echo " <option value = \"\" > </option>";
 
-            while ($row = mysqli_fetch_array($result)) {
-                $tno = $row['trainno'];
-                $tn = $row['tname'] . " starting at " . $row['sp'];
-                echo " <option value = \"$tno\" > $tn </option> ";
-            }
-            ?>
-        </select><br>
+                while ($row = mysqli_fetch_array($result)) {
+                    $tno = $row['trainno'];
+                    $tn = $row['tname'] . " starting at " . $row['sp'];
+                    echo " <option value = \"$tno\" > $tn </option> ";
+                }
+                ?>
+            </select><br>
 
-        Date Of Journey: <input type="date" name="doj" required><br>
-        Class Name: <input type="text" name="class" required><br>
-        Fare per Seat: <input type="text" name="fps" required><br>
-        Total Seats: <input type="text" name="seatsleft" required><br>
+            Date Of Journey: <input type="date" name="doj" required><br>
+            Class Name: <input type="text" name="class" required><br>
+            Fare per Seat: <input type="text" name="fps" required><br>
+            Total Seats: <input type="text" name="seatsleft" required><br>
 
-        <br><br><input type="submit" value="Add Train Schedule">
-        <div id="footid"></div>
+            <br><br><input type="submit" value="Add Train Schedule">
+    </div>
+    <div id="footid"></div>
 </body>
 
 </html>
