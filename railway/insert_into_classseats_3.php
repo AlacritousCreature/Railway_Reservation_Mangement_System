@@ -30,7 +30,6 @@
 		session_start();
 
 		require "db.php";
-		// $_POST["tno"]=0;
 		
 		if ($_POST["tno"]) {
 			$trainno = $_POST["tno"];
@@ -56,7 +55,7 @@
 
 			$_SESSION["ns"] = $i - 1;
 
-			$_SESSION["stations"] = $stations;
+			$_SESSION["stations"] = "$stations";
 
 			echo " <table><thead><td>Starting Point</td><td>Destination Point</td><td>AC1 seats</td><td>AC1 Fare</td><td>AC2 seats</td><td>AC2 Fare</td><td>AC3 seats</td><td>AC3 Fare</td><td>CC seats</td><td>CC Fare</td><td>EC seats</td><td>EC Fare</td><td>SL seats</td><td>SL Fare</td></thead>";
 

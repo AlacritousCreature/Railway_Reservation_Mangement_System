@@ -30,14 +30,13 @@
                 <img style="flex: 50%;" src="public/assets/undraw_Traveling_re_weve.svg">
             </div>
             <div class="col-6">
-                <?php
-                error_reporting(E_ERROR);
+                <?php             
                 session_start();
-                if ($_SESSION["admin_login"] == False)
-                if ($_POST["id"] == 'admin' and $_POST["password"] == 'admin') {
+                error_reporting(E_ERROR);
+                // if ($_SESSION["admin_login"] == False)
+                if ($_POST["uid"] == 'admin' and $_POST["password"] == 'admin') {
                     $_SESSION["admin_login"] = True;
                 }
-
                 if ($_SESSION["admin_login"] == True) {
                     echo "
                  <br>
@@ -123,13 +122,11 @@
                 } else {
 
                     echo "
-                        <form action=\"admin_login.php\" method=\"post\">
-                        User ID: <input type=\"text\" name=\"uid\" required><br><br>
-                        Password: <input type=\"password\" name=\"password\" required><br><br>
-                        <input type=\"submit\" type=\"button\" class=\"btn btn-success\">
-                      
-                        </form>
-                        ";
+<form action=\"admin_login.php\" method=\"post\">
+User ID: <input type=\"text\" name=\"uid\" required><br><br>
+Password: <input type=\"password\" name=\"password\" required><br><br>
+<input type=\"submit\" type=\"button\" class=\"btn btn-success\">
+</form>";
                 }
 
 
