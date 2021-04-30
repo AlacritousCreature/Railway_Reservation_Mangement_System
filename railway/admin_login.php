@@ -26,20 +26,18 @@
     <div id="navid"></div>
     <div class="container" style="padding-top:10rem;">
         <div class="row" style="display: flex;">
-        <div class="column" style="flex: 50%;padding: 5px;">
-            <br>
-            <br>
-            <img src="public/assets/undraw_Traveling_re_weve.svg">
-        </div>
-        <div class="column" style="flex: 50%; padding: 5px;">
-            <?php
-            session_start();
-            if ($_POST["uid"] == 'admin' and $_POST["password"] == 'admin') {
-                $_SESSION["admin_login"] = True;
-            }
+            <div class="col-6">
+                <img style="flex: 50%;" src="public/assets/undraw_Traveling_re_weve.svg">
+            </div>
+            <div class="col-6">
+                <?php
+                session_start();
+                if ($_POST["id"] == 'admin' and $_POST["password"] == 'admin') {
+                    $_SESSION["admin_login"] = True;
+                }
 
-            if ($_SESSION["admin_login"] == True) {
-                echo "
+                if ($_SESSION["admin_login"] == True) {
+                    echo "
                  <br>
                 
                 <a href=\"insert_into_stations.php\" style=\"text-decoration: none; 
@@ -120,9 +118,9 @@
                 outline: whitesmoke;
                 
                 \"> View all cancelled tickets </a><br> ";
-            } else {
+                } else {
 
-                echo "
+                    echo "
                         <form action=\"admin_login.php\" method=\"post\">
                         User ID: <input type=\"text\" name=\"uid\" required><br><br>
                         Password: <input type=\"password\" name=\"password\" required><br><br>
@@ -130,19 +128,19 @@
                       
                         </form>
                         ";
-            }
-            
+                }
 
 
-            ?>
-            <br>
-            <br>
+
+                ?>
+                <br>
+                <br>
             </div>
-           
+
             <div class="row" style="display: flex;">
-            <div class="column" style="flex: 40%;padding: 5px;"></div>
-            <div class="column" style="flex: 20%;padding: 5px;">
-            <a href="index.htm"  style="text-decoration: none; 
+                <div class="column" style="flex: 40%;padding: 5px;"></div>
+                <div class="column" style="flex: 20%;padding: 5px;">
+                    <a href="index.htm" style="text-decoration: none; 
                         display: inline-block;
                         padding: 15px 32px;
                         text-align: center;
@@ -152,12 +150,14 @@
                         border-radius: 50px;
                         outline: whitesmoke;
                         
-                        ">Go to Home Page!!!</a></div>
-            <div class="column" style="flex: 40%;padding: 5px;"></div>
+                        ">Go to Home Page!!!</a>
+                </div>
+                <div class="column" style="flex: 40%;padding: 5px;"></div>
             </div>
             <!-- <br><div align="center"><a href="index.htm">Go to Home Page!!!</a></div> -->
         </div>
     </div>
     <div id="footid"></div>
 </body>
+
 </html>

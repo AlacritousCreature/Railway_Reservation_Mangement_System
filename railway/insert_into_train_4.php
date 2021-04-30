@@ -24,45 +24,57 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <?php
-    session_start();
+    <div class="container" style="padding-top:10rem;">
+        <?php
+        session_start();
 
 
-    require "db.php";
+        require "db.php";
 
-    $sql = "INSERT INTO train (tname,sp,st,dp,dt,dd,distance) VALUES ('" . $_SESSION["tname"] . "','" . $_SESSION["sp"] . "','" . $_SESSION["st"] . "','" . $_SESSION["dp"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["dd"] . "','" . $_SESSION["ds"] . "')";
+        $sql = "INSERT INTO train (tname,sp,st,dp,dt,dd,distance) VALUES ('" . $_SESSION["tname"] . "','" . $_SESSION["sp"] . "','" . $_SESSION["st"] . "','" . $_SESSION["dp"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["dd"] . "','" . $_SESSION["ds"] . "')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New Train record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        if ($conn->query($sql) === TRUE) {
+            echo "New Train record created successfully<br><br>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-    $cdquery = "SELECT trainno FROM train where tname='" . $_SESSION["tname"] . "' AND sp='" . $_SESSION["sp"] . "' AND dp='" . $_SESSION["dp"] . "'";
-    $cdresult = mysqli_query($conn, $cdquery);
-    $cdrow = mysqli_fetch_array($cdresult);
-    $trainno = $cdrow['trainno'];
+        $cdquery = "SELECT trainno FROM train where tname='" . $_SESSION["tname"] . "' AND sp='" . $_SESSION["sp"] . "' AND dp='" . $_SESSION["dp"] . "'";
+        $cdresult = mysqli_query($conn, $cdquery);
+        $cdrow = mysqli_fetch_array($cdresult);
+        $trainno = $cdrow['trainno'];
 
-    $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_SESSION["sp"] . "','" . $_SESSION["st"] . "','" . $_SESSION["st"] . "','0')";
-    $flag = ($conn->query($sql));
-    $temp = 1;
-    while ($temp <= $_SESSION["ns"]) {
-        $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_POST["stn" . $temp] . "','" . $_POST["st" . $temp] . "','" . $_POST["dt" . $temp] . "','" . $_POST["ds" . $temp] . "')";
+        $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_SESSION["sp"] . "','" . $_SESSION["st"] . "','" . $_SESSION["st"] . "','0')";
         $flag = ($conn->query($sql));
-        $temp += 1;
-    }
-    $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_SESSION["dp"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["ds"] . "')";
-    $flag = ($conn->query($sql));
+        $temp = 1;
+        while ($temp <= $_SESSION["ns"]) {
+            $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_POST["stn" . $temp] . "','" . $_POST["st" . $temp] . "','" . $_POST["dt" . $temp] . "','" . $_POST["ds" . $temp] . "')";
+            $flag = ($conn->query($sql));
+            $temp += 1;
+        }
+        $sql = "INSERT INTO schedule (trainno,sname,arrival_time,departure_time,distance) VALUES ('" . $trainno . "','" . $_SESSION["dp"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["dt"] . "','" . $_SESSION["ds"] . "')";
+        $flag = ($conn->query($sql));
 
-    if ($flag === TRUE) {
-        echo "New schedule added successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        if ($flag === TRUE) {
+            echo "New schedule added successfully<br><br>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-    echo "<br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
+        echo "<br> <a href=\"admin_login.php\" style=\"text-decoration: none; 
+        display: inline-block;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: rgb(0, 102, 0);
+        border-radius: 50px;
+        outline: whitesmoke;
+        
+        \">Go Back to Admin Menu!!!</a> ";
 
-    ?>
+        ?>
+    </div>
     <div id="footid"></div>
 </body>
 

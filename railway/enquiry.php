@@ -34,15 +34,15 @@
     ?>
 
 
-<section class="container-fluid px-0" style="margin-top: 10rem; margin-right: 10rem; margin-left: 10rem">
+    <section class="container-fluid px-0" style="margin-top: 10rem; margin-right: 10rem; margin-left: 10rem">
         <div class="row align-items-center content" style="padding-right: 0rem;">
             <div class="col-md-6 order-2 order-md-1">
                 <img src="public/assets/calendar.png" alt="" class="img-fluid" style="width: 600px; height: 400px">
 
                 <div class="row" style="display: flex; padding: 20px">
-            <div class="column" style="flex: -10%;padding: 5px;"></div>
-            <div align="left" class="column" style="flex: 50%;padding: 5px;">
-            <a href="index.htm"  style="text-decoration: none; 
+                    <div class="column" style="flex: -10%;padding: 5px;"></div>
+                    <div align="left" class="column" style="flex: 50%;padding: 5px;">
+                        <a href="index.htm" style="text-decoration: none; 
                         display: inline-block;
                         padding: 15px 32px;
                         text-align: center;
@@ -52,8 +52,9 @@
                         border-radius: 50px;
                         outline: whitesmoke;
                         
-                        ">Go to Home Page!!!</a></div>
-            </div>
+                        ">Go to Home Page!!!</a>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6 text-center order-1 order-md-2">
@@ -114,7 +115,7 @@
 
                                 Date of Journey: <input type="date" name="doj" required><br><br>
                                 <input type="submit" type="button" class="btn btn-success">
-                               
+
                         </form>
 
 
@@ -125,6 +126,7 @@
             </div>
 
         </div>
+    </section>
 
 
     <div id="footid"></div>

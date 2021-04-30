@@ -24,54 +24,63 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
 	<div id="navid"></div>
+	<div class="container" style="padding-top:10rem;">
 
-	<?php
-	session_start();
+		<?php
+		session_start();
 
 
-	require "db.php";
+		require "db.php";
 
-	$stations = $_SESSION["stations"];
+		$stations = $_SESSION["stations"];
 
-	$temp = 0;
-	while ($temp < $_SESSION["ns"]) {
-		if ($_POST["s1" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC1','" . $_POST["s1" . $temp] . "','" . $_POST["f1" . $temp] . "')";
-			$flag = ($conn->query($sql));
+		$temp = 0;
+		while ($temp < $_SESSION["ns"]) {
+			if ($_POST["s1" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC1','" . $_POST["s1" . $temp] . "','" . $_POST["f1" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+			if ($_POST["s2" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC2','" . $_POST["s2" . $temp] . "','" . $_POST["f2" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+			if ($_POST["s3" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC3','" . $_POST["s3" . $temp] . "','" . $_POST["f3" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+			if ($_POST["s4" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','CC','" . $_POST["s4" . $temp] . "','" . $_POST["f4" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+			if ($_POST["s5" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','EC','" . $_POST["s5" . $temp] . "','" . $_POST["f5" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+			if ($_POST["s6" . $temp] > 0) {
+				$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','SL','" . $_POST["s6" . $temp] . "','" . $_POST["f6" . $temp] . "')";
+				$flag = ($conn->query($sql));
+			}
+
+			$temp += 1;
 		}
-		if ($_POST["s2" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC2','" . $_POST["s2" . $temp] . "','" . $_POST["f2" . $temp] . "')";
-			$flag = ($conn->query($sql));
-		}
-		if ($_POST["s3" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','AC3','" . $_POST["s3" . $temp] . "','" . $_POST["f3" . $temp] . "')";
-			$flag = ($conn->query($sql));
-		}
-		if ($_POST["s4" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','CC','" . $_POST["s4" . $temp] . "','" . $_POST["f4" . $temp] . "')";
-			$flag = ($conn->query($sql));
-		}
-		if ($_POST["s5" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','EC','" . $_POST["s5" . $temp] . "','" . $_POST["f5" . $temp] . "')";
-			$flag = ($conn->query($sql));
-		}
-		if ($_POST["s6" . $temp] > 0) {
-			$sql = "INSERT INTO classseats (trainno,sp,dp,doj,class,seatsleft,fare) VALUES ('" . $_SESSION["trainno"] . "','" . $_SESSION["st" . $temp] . "','" . $_SESSION["st" . ($temp + 1)] . "','" . $_SESSION["doj"] . "','SL','" . $_POST["s6" . $temp] . "','" . $_POST["f6" . $temp] . "')";
-			$flag = ($conn->query($sql));
+
+		if ($flag === TRUE) {
+			echo "New seat arrangement added successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 
-		$temp += 1;
-	}
+		echo "<br> <a href=\"admin_login.php\" style=\"display: inline-block;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		background-color: rgb(0, 102, 0);
+		border-radius: 50px;
+		outline: whitesmoke;\">Go Back to Admin Menu!!!</a> ";
 
-	if ($flag === TRUE) {
-		echo "New seat arrangement added successfully";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-
-	echo "<br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
-
-	?>
+		?>
+	</div>
 	<div id="footid"></div>
 </body>
 
