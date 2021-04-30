@@ -24,7 +24,7 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-
+    <div class="container" style="padding-top:10rem;">
     <?php
 
     require "db.php";
@@ -46,6 +46,7 @@
     echo "</table>";
 
     ?>
+    
     <br>
     <span>
         <form action="insert_into_station.php" method="post">
@@ -55,6 +56,7 @@
     <?php
     echo "<br><br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
     ?>
+    </div>
     <div id="footid"></div>
 </body>
 
