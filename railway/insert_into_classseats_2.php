@@ -24,23 +24,24 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
+    <div class="container" style="padding-top:10rem;">
+        <?php
 
-    <?php
+        require "db.php";
 
-    require "db.php";
+        $sql = "INSERT INTO classseats (trainno,doj,class,seatsleft,fare) VALUES ('" . $_POST["tno"] . "','" . $_POST["doj"] . "','" . $_POST["class"] . "','" . $_POST["seatsleft"] . "','" . $_POST["fps"] . "')";
 
-    $sql = "INSERT INTO classseats (trainno,doj,class,seatsleft,fare) VALUES ('" . $_POST["tno"] . "','" . $_POST["doj"] . "','" . $_POST["class"] . "','" . $_POST["seatsleft"] . "','" . $_POST["fps"] . "')";
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        echo "<br><br><a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
 
-    echo "<br><br><a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
-
-    $conn->close();
-    ?>
+        $conn->close();
+        ?>
+    </div>
     <div id="footid"></div>
 </body>
 

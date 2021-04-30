@@ -24,15 +24,48 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <div class="container" style="padding-top:10rem;">
-        <form action="user_login.php" method="post">
-            <div align="center">
-                <h4>Enter the details:</h4><br><br> Registered Mobile No: <input type="text" name="mno" required><br><br> Password: <input type="password" name="password" required><br><br>
-                <input type="submit" value="Login" type="button" class="btn btn-success">
-                <br><br><a href="index.htm">Home Page</a>
-            </div>
-        </form>
-    </div>
+
+    <section class="container-fluid px-0" style="margin-top: 10rem; margin-right: 0rem; margin-left: 5rem">
+                <div class="row align-items-center content" style="padding-right: 0rem;">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <form action="user_login.php" method="post" style="border: 1px #028eb5 solid; padding-top: 50px; border-radius: 20%; padding-bottom: 50px;">
+                            <div align="center">
+                                <h4>Enter the details:</h4><br><br> Registered Mobile No: <input type="text" name="mno" required><br><br> Password: <input type="password" name="password" required><br><br>
+                                <input type="submit" value="Login" type="button" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 text-center order-1 order-md-2">
+                        <div class="row justify-content-left">
+                            <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+
+                                <img src="public/assets/travel.svg" alt="" class="img-fluid" style="width: 600px; height: 400px">
+
+                                    <div class="row" style="display: flex; padding: 20px">
+                                        <div class="column" style="flex: -10%;padding: 5px;"></div>
+                                        <div align="left" class="column" style="flex: 50%;padding: 5px;">
+                                            <a href="index.htm" style="text-decoration: none; 
+                                            display: inline-block;
+                                            padding: 15px 32px;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            color: #ffffff;
+                                            background-color: rgb(2, 1, 58);
+                                            border-radius: 50px;
+                                            outline: whitesmoke;
+                                            
+                                            ">Go to Home Page!!!</a>
+                                        </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
     <div id="footid"></div>
 </body>
 
