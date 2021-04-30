@@ -30,7 +30,7 @@
 	session_start();
 
 	require "db.php";
-
+	
 	if (isset($_POST["ns"])) {
 		$ns = $_POST["ns"];
 		$tname = $_POST["tname"];
