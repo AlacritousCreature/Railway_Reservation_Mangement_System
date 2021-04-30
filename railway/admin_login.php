@@ -32,6 +32,7 @@
             <div class="col-6">
                 <?php
                 session_start();
+                if ($_SESSION["admin_login"] == False)
                 if ($_POST["id"] == 'admin' and $_POST["password"] == 'admin') {
                     $_SESSION["admin_login"] = True;
                 }

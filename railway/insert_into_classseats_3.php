@@ -29,7 +29,8 @@
 		session_start();
 
 		require "db.php";
-
+		// $_POST["tno"]=0;
+		
 		if ($_POST["tno"]) {
 			$trainno = $_POST["tno"];
 			$_SESSION["trainno"] = "$trainno";
@@ -54,7 +55,7 @@
 
 			$_SESSION["ns"] = $i - 1;
 
-			$_SESSION["stations"] = "$stations";
+			$_SESSION["stations"] = $stations;
 
 			echo " <table><thead><td>Starting Point</td><td>Destination Point</td><td>AC1 seats</td><td>AC1 Fare</td><td>AC2 seats</td><td>AC2 Fare</td><td>AC3 seats</td><td>AC3 Fare</td><td>CC seats</td><td>CC Fare</td><td>EC seats</td><td>EC Fare</td><td>SL seats</td><td>SL Fare</td></thead>";
 
@@ -85,14 +86,14 @@
 	</tr>";
 				$temp += 1;
 			}
-
-			echo "</table><input type=\"submit\"></form>";
+			
+			echo "</table><input type=\"submit\" type=\"button\" class=\"btn btn-success\"></form>";
 		} else {
 			echo "
-<form action=\"insert_into_classseats_3.php\" method=\"post\">
-<table>
-<thead><td>Train</td><td>Date Of Journey</td></thead>
-<tr><td><select id=\"tno\" name=\"tno\" required>";
+			<form action=\"insert_into_classseats_3.php\" method=\"post\">
+			<table>
+			<thead><td>Train</td><td>Date Of Journey</td></thead>
+			<tr><td><select id=\"tno\" name=\"tno\" required>";
 
 			$query = "SELECT * FROM train";
 			$result = mysqli_query($conn, $query);
@@ -104,31 +105,33 @@
 			}
 
 			echo "</select></td>
-<td><input type=\"date\" name=\"doj\" required></td></tr>
-</table>
-<input type=\"submit\" type=\"button\" class=\"text-decoration: none; 
-display: inline-block;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-color: #ffffff;
-background-color: orange;
-border-radius: 50px;
-outline: whitesmoke;\" value=\"Enter Train Details\">
-";
+					<td><input type=\"date\" name=\"doj\" required></td></tr>
+					</table>
+					<input type=\"submit\" type=\"button\" style=\"text-decoration: none; 
+					display: inline-block;
+					padding: 15px 32px;
+					text-align: center;
+					text-decoration: none;
+					color: #ffffff;
+					background-color: rgb(2, 1, 58);
+					border-radius: 50px;
+					outline: whitesmoke;
+
+					\" value=\"Enter Train Details\">
+					";
 		}
 
 		echo "<br><br> <a href=\"admin_login.php\" style=\"text-decoration: none; 
-    display: inline-block;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: rgb(0, 102, 0);
-    border-radius: 50px;
-    outline: whitesmoke;
-    
-    \">Go Back to Admin Menu!!!</a> ";
+						display: inline-block;
+						padding: 15px 32px;
+						text-align: center;
+						text-decoration: none;
+						color: #ffffff;
+						background-color: rgb(0, 102, 0);
+						border-radius: 50px;
+						outline: whitesmoke;
+						
+						\">Go Back to Admin Menu!!!</a> ";
 
 		?>
 	</div>
