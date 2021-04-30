@@ -51,10 +51,21 @@
     <span>
         <form action="insert_into_station.php" method="post">
             Add Station : <input type="text" name="sname" placeholder=" New Station" required>
-            <input type="submit" value="Add">
+            <input type="submit" type="button" class="btn btn-success" value="Add">
+            <!-- <input type="submit" value="Add"> -->
     </span>
     <?php
-    echo "<br><br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
+    echo "<br><br> <a href=\"admin_login.php\" style=\"text-decoration: none; 
+    display: inline-block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(0, 102, 0);
+    border-radius: 50px;
+    outline: whitesmoke;
+    
+    \">Go Back to Admin Menu!!!</a> ";
     ?>
     </div>
     <div id="footid"></div>

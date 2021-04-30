@@ -39,7 +39,17 @@
 
     echo "</table>";
 
-    echo "<br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
+    echo "<br> <a href=\"admin_login.php\" style=\"text-decoration: none; 
+    display: inline-block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(0, 102, 0);
+    border-radius: 50px;
+    outline: whitesmoke;
+    
+    \"> Go Back to Admin Menu!!!</a> ";
 
     $conn->close();
     ?>

@@ -27,7 +27,9 @@
     <div class="container" style="padding-top:10rem;">
         <div class="row" style="display: flex;">
         <div class="column" style="flex: 50%;padding: 5px;">
-            <img src="public/assets/undraw_Traveling_re_weve.svg" alt="Snow" style="width:100%">
+            <br>
+            <br>
+            <img src="public/assets/undraw_Traveling_re_weve.svg">
         </div>
         <div class="column" style="flex: 50%; padding: 5px;">
             <?php
@@ -39,8 +41,7 @@
             if ($_SESSION["admin_login"] == True) {
                 echo "
                  <br>
-                <div class=\"row\" style=\"display: flex;\">
-                <div class=\"column\" flex: 50% \">
+                
                 <a href=\"insert_into_stations.php\" style=\"text-decoration: none; 
                 display: inline-block;
                 padding: 15px 32px;
@@ -74,8 +75,7 @@
                 outline: whitesmoke;
                 
                 \"> Show All Users </a><br>
-                </div>
-                <div class=\"column\" flex: 50% \">
+                
                 <br><a href=\"insert_into_train_3.php\" style=\"text-decoration: none; 
                 display: inline-block;
                 padding: 15px 32px;
@@ -119,7 +119,7 @@
                 border-radius: 50px;
                 outline: whitesmoke;
                 
-                \"> View all cancelled tickets </a><br> </div></div>";
+                \"> View all cancelled tickets </a><br> ";
             } else {
 
                 echo "

@@ -127,11 +127,22 @@
 
 <tr><td>Day of Arrival </td><td> <input type=\"text\" name=\"dd\" required></td></tr>
 </table>
-<input type=\"submit\" value=\"Enter Train Details\">
+<input type=\"submit\" type=\"button\" class=\"btn btn-success\" value=\"Enter Train Details\">
+
 ";
 	}
 
-	echo "<br><br> <a href=\"admin_login.php\">Go Back to Admin Menu!!!</a> ";
+	echo "<br><br> <a href=\"admin_login.php\" style=\"text-decoration: none; 
+    display: inline-block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(0, 102, 0);
+    border-radius: 50px;
+    outline: whitesmoke;
+    
+    \"> Go Back to Admin Menu!!!</a> ";
 
 	?>
 	</div>
