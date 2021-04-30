@@ -26,6 +26,7 @@
 	<div id="navid"></div>
 	<div class="container" style="padding-top:10rem;">
 	<?php
+	error_reporting(E_ERROR);
 	echo "Enter a new Train Details!";
 	session_start();
 
