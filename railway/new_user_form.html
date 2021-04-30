@@ -24,32 +24,48 @@
 
 <body style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div id="navid"></div>
-    <form action="new_user_form.php" method="post" style="padding-top:10rem;">
-        <div align="center">
-            <h4>Kindly enter your credentials!!!</h4><br><br> E-mail ID: <input type="text" name="emailid" required><br><br> Mobile No.: <input type="text" name="mobileno" required><br><br> dob:
-            <input type="date" name="dob" required><br>
-            <br> Password: <input type="password" name="password" required><br><br>
-            <input type="submit" value="Save" type="button" class="btn btn-success"><br><br>
+        <section class="container-fluid px-0" style="margin-top: 10rem; margin-right: 10rem; margin-left: 10rem">
+                <div class="row align-items-center content" style="padding-right: 0rem;">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <img src="public/assets/travel.svg" alt="" class="img-fluid" style="width: 600px; height: 400px">
 
-            <!-- <a href="index.htm">Home Page</a> -->
-            <div class="row" style="display: flex; padding: 20px">
-                <div class="column" style="flex: 40%;padding: 5px;"></div>
-                <div class="column" style="flex: 20%;padding: 5px;">
-                <a href="index.htm"  style="text-decoration: none; 
-                            display: inline-block;
-                            padding: 15px 32px;
-                            text-align: center;
-                            text-decoration: none;
-                            color: #ffffff;
-                            background-color: rgb(2, 1, 58);
-                            border-radius: 50px;
-                            outline: whitesmoke;
-                            
-                            ">Go to Home Page!!!</a></div>
-                <div class="column" style="flex: 40%;padding: 5px;"></div>
+                        <div class="row" style="display: flex; padding: 20px">
+                            <div class="column" style="flex: -10%;padding: 5px;"></div>
+                            <div align="left" class="column" style="flex: 50%;padding: 5px;">
+                                <a href="index.htm" style="text-decoration: none; 
+                                display: inline-block;
+                                padding: 15px 32px;
+                                text-align: center;
+                                text-decoration: none;
+                                color: #ffffff;
+                                background-color: rgb(2, 1, 58);
+                                border-radius: 50px;
+                                outline: whitesmoke;
+                                
+                                ">Go to Home Page!!!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-center order-1 order-md-2">
+                        <div class="row justify-content-left">
+                            <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                                <form action="new_user_form.php" method="post" style="border: 1px #028eb5 solid; padding-top: 50px; border-radius: 10%; padding-bottom: 50px;">
+                                    <div align="center">
+                                        <h4>Kindly enter your credentials!!!</h4><br><br> E-mail ID: <input type="text" name="emailid" required><br><br> Mobile No.: <input type="text" name="mobileno" required><br><br> dob:
+                                        <input type="date" name="dob" required><br>
+                                        <br> Password: <input type="password" name="password" required><br><br>
+                                        <input type="submit" value="Save" type="button" class="btn btn-success"><br><br>
+                                            <div class="column" style="flex: 40%;padding: 5px;"></div>
+                                            </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </div>
-    </form>
+            </section>
+
     <div id="footid"></div>
 </body>
 
