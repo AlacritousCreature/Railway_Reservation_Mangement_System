@@ -26,7 +26,7 @@
   <div id="navid"></div>
   <div class="container" style="padding-top:10rem;">
     <?php
-
+    error_reporting(E_ERROR);
     session_start();
 
     require "db.php";

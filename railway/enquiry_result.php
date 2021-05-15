@@ -38,7 +38,7 @@
         $dp = $_POST["dp"];
         $_SESSION["dp"] = "$dp";
 
-        $query = mysqli_query($conn, "SELECT t.trainno,t.tname,c.sp,s1.departure_time,c.dp,s2.arrival_time,t.dd,c.class,c.fare,c.seatsleft FROM train as t,classseats as c, schedule as s1,schedule as s2 where s1.trainno=t.trainno AND s2.trainno=t.trainno AND s1.sname='" . $sp . "' AND s2.sname='" . $dp . "' AND t.trainno=c.trainno AND c.sp='" . $sp . "' AND c.dp='" . $dp . "' AND c.doj='" . $doj . "' ");
+        $query = mysqli_query($conn, "SELECT t.trainno,t.tname,c.sp,s1.departure_time,c.dp,s2.arrival_time,t.dd,c.class,c.fare,c.seatsleft FROM train as t,classseats as c, schedule as s1,schedule as s2 where s1.trainno=t.trainno AND s2.trainno=t.trainno AND s1.sname='" . $sp . "' AND s2.sname='" . $dp . "' AND t.trainno=c.trainno AND c.sp='" . $sp . "' AND c.dp='" . $dp . "'  ");
 
         echo "<table><thead><td>Train No</td><td>Train_Name</td><td>Starting_Point</td><td>Arrival_Time</td><td>Destination_Point</td><td>Departure_Time</td><td>Day</td><td>Train_Class</td><td>Fare</td><td>Seats_Left</td></thead>";
 
@@ -75,7 +75,7 @@
         <div class="row" style="display: flex; padding: 20px">
             <div class="column" style="flex: -10%;padding: 5px;"></div>
             <div align="left" class="column" style="flex: 50%;padding: 5px;">
-            <a href="index.htm"  style="text-decoration: none; 
+                <a href="index.htm" style="text-decoration: none; 
                         display: inline-block;
                         padding: 15px 32px;
                         text-align: center;
@@ -85,11 +85,12 @@
                         border-radius: 50px;
                         outline: whitesmoke;
                         
-                        ">Go to Home Page!!!</a></div>
+                        ">Go to Home Page!!!</a>
             </div>
-            </div>
+        </div>
+    </div>
 
-            
+
     </div>
     <div id="footid"></div>
 
